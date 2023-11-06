@@ -1,5 +1,5 @@
 const taskManager = {
-    tasks: [];
+    tasks: [],
     addTask: function (title, desctipiton) {
         const task = {
             id: this.generateUniqueId(),
