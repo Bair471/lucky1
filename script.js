@@ -6,7 +6,6 @@ const taskManager = {
             title: title,
             desctipiton: desctipiton,
             stats: 'В Работе',
-            console.log(taskManager);
         };
         this.tasks.push(task);
     },
