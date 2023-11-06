@@ -10,4 +10,3 @@ const taskManager = {
         this.tasks.push(task);
     },
 }
-
