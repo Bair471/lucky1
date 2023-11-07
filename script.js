@@ -10,3 +10,11 @@ const taskManager = {
         this.tasks.push(task);
     },
 }
+
+function addition(a, b) {
+    return a + b;
+};
+
+const result = addition(5, 3);
+console.log(result);
+
