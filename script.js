@@ -32,3 +32,14 @@ const result = convert(5);
 
 console.log(result);
 
+
+
+
+function addition(num) {
+    return num + 1;
+};
+
+const result = addition(5);
+
+console.log(result);
+
