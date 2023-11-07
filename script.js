@@ -94,3 +94,37 @@ console.log(result);
 
 
 
+function howManySeconds(hours) {
+    return hours * 60 * 60;
+}
+
+const result = howManySeconds(2);
+console.log(result);
+
+
+
+function nextEdge(side1, side2) {
+    return (side1 + side2) - 1;
+}
+
+const result = nextEdge(8, 10);
+console.log(result);
+
+
+
+
+
+const numbers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+
+function listNumbers() {
+    const newNumbers = [];
+    for (let i = 0; i < numbers.length; i += 1) {
+        if (numbers[i] > 50) {
+            newNumbers.push(numbers[i]);
+        }
+    }
+    console.log(newNumbers);
+}
+
+listNumbers()
+    ```
