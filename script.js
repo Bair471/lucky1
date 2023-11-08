@@ -1,15 +1,15 @@
-const taskManager = {
-    tasks: [],
-    addTask: function (title, desctipiton) {
-        const task = {
-            id: this.generateUniqueId(),
-            title: title,
-            desctipiton: desctipiton,
-            stats: 'В Работе',
-        };
-        this.tasks.push(task);
-    },
-}
+// const taskManager = {
+//     tasks: [],
+//     addTask: function (title, desctipiton) {
+//         const task = {
+//             id: this.generateUniqueId(),
+//             title: title,
+//             desctipiton: desctipiton,
+//             stats: 'В Работе',
+//         };
+//         this.tasks.push(task);
+//     },
+// }
 
 
 
@@ -151,3 +151,44 @@ function printArray(number) {
 
     return newArray;
 }
+
+
+
+
+function animals(chickens, cows, pigs) {
+    return chickens * 2 + cows * 4 + pigs * 4;
+}
+
+console.log(animals(2, 3, 5));
+
+
+
+
+const taskManager = {
+    tasks: [],
+
+    addTask: function (title, description) {
+        const task = {
+            id: generateunqiueId(),
+            title: title,
+            description: description,
+            status: `В Работе`,
+        }
+        this.tasks.push(task)
+    },
+
+    generateunqiueId: function () {
+        return Math.random().toString(36).substring(2, 9);
+    },
+
+    listId: function (taskId) {
+        const newTask = [];
+        for (let i = 0; i < this.tasks.length; i += 1) {
+            if (this.tasks.id[i] !== taskId) {
+                this.tasks.push(newTask[i]);
+            }
+            console.log(newTask[i]);
+        }
+    },
+
+};
