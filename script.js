@@ -126,5 +126,28 @@ function listNumbers() {
     console.log(newNumbers);
 }
 
-listNumbers()
-    ```
+console.log(listNumbers());
+
+
+
+
+function lessThan100(a, b) {
+    if (a + b >= 100) {
+        return false
+    } else {
+        return true
+    }
+};
+
+console.log(lessThan100(22, 15));
+
+
+function printArray(number) {
+    var newArray = [];
+
+    for (var i = 1; i <= number; i += 1) {
+        newArray.push(i);
+    }
+
+    return newArray;
+}
