@@ -181,7 +181,31 @@ for (let i = 0; i < jonas.length; i += 1) {
 console.log(types);
 
 
+function isSameNum(num1, num2) {
+    return num1 === num2;
+}
 
+console.log(isSameNum(2, 2));
+
+
+function convert(hours, minutes) {
+    return (hours * 60 * 60) + (minutes * 60);
+}
+
+console.log(convert(1, 3));
+
+
+function inchesToFeet(inches) {
+    if (inches < 12) {
+        return 0
+    }
+
+    const result = inches / 12;
+    return result;
+}
+
+
+console.log(inchesToFeet(324));
 
 
 const taskManager = {
