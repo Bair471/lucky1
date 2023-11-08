@@ -162,6 +162,26 @@ function animals(chickens, cows, pigs) {
 console.log(animals(2, 3, 5));
 
 
+const jonas = [
+    'Jonas'
+    'Schmidman'
+    2037 - 1991,
+    'teacher',
+    ['Michael', 'Peter', 'Steven'],
+    true
+];
+
+const types = [];
+
+for (let i = 0; i < jonas.length; i += 1) {
+    console.log(jonas[i], typeof jonas[i]);
+    types[i] = typeof jonas[i];
+}
+
+console.log(types);
+
+
+
 
 
 const taskManager = {
