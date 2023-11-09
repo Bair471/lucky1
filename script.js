@@ -208,34 +208,34 @@ function inchesToFeet(inches) {
 console.log(inchesToFeet(324));
 
 
-const taskManager = {
-    tasks: [],
+// const taskManager = {
+//     tasks: [],
 
-    addTask: function (title, description) {
-        const task = {
-            id: generateunqiueId(),
-            title: title,
-            description: description,
-            status: `В Работе`,
-        }
-        this.tasks.push(task)
-    },
+//     addTask: function (title, description) {
+//         const task = {
+//             id: generateunqiueId(),
+//             title: title,
+//             description: description,
+//             status: `В Работе`,
+//         }
+//         this.tasks.push(task)
+//     },
 
-    generateunqiueId: function () {
-        return Math.random().toString(36).substring(2, 9);
-    },
+//     generateunqiueId: function () {
+//         return Math.random().toString(36).substring(2, 9);
+//     },
 
-    listId: function (taskId) {
-        const newTask = [];
-        for (let i = 0; i < this.tasks.length; i += 1) {
-            if (this.tasks.id[i] !== taskId) {
-                this.tasks.push(newTask[i]);
-            }
-            console.log(newTask[i]);
-        }
-    },
+//     listId: function (taskId) {
+//         const newTask = [];
+//         for (let i = 0; i < this.tasks.length; i += 1) {
+//             if (this.tasks.id[i] !== taskId) {
+//                 this.tasks.push(newTask[i]);
+//             }
+//             console.log(newTask[i]);
+//         }
+//     },
 
-};
+// };
 
 
 
@@ -272,7 +272,7 @@ const taskManager = {
                 this.tasks[i].status = newStatus;
             }
         }
-    }
+    },
 
 
     deleteTask: function (taskId) {
@@ -284,7 +284,7 @@ const taskManager = {
         const newTasks = [];
         for (let i = 0; i < this.tasks.length; i += 1) {
             if (this.tasks[i].id !== taskId) {
-                newTasks.push(this.tasks[i]);
+                this.tasks[i].push(newTasks[i]);
             }
         }
         this.tasks = newTasks
@@ -312,10 +312,39 @@ console.log(taskManager.listTasks());
 
 
 const taskId = taskManager.tasks[0, 1].id;
-taskManager.changeTaskStatus(taskId, 'Завершено');
+taskManager.changeTaskStatus([0], 'Запрещено');
 console.log('Изменённый статус первой задачи:');
 console.log(taskManager.listTasks());
 
 taskManager.deleteTask1(taskId);
 // console.log('Удалена первая задача:');
 console.log(taskManager.listTasks());
+
+
+
+
+
+// const TaskManager = {
+//     tasks: [],
+//     addTask: function (title, description) {
+//         const task = {
+//             id: this.idGeneartor(),
+//             title: title,
+//             description: description,
+//             status: 'In Progress',
+//         }
+//         this.tasks.push(task);
+//     },
+
+//     deleteTask: function (taskId) {
+//         const newTasks = [];
+//         for (let i = 0; i < this.tasks.length; i += 1) {
+//             if (this.tasks[i].id !== taskId) {
+//                 newTasks.push(this.tasks[i]);
+//             }
+//         }
+//     },
+
+//     changeStatus: function (taskId)
+
+// };
