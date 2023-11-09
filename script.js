@@ -236,3 +236,86 @@ const taskManager = {
     },
 
 };
+
+
+
+
+const taskManager = {
+    tasks: [],
+
+    addTask: function (title, description) {
+        const task = {
+            id: this.generateUniqueId(),
+            title: title,
+            description: description,
+            status: 'В работе',
+        };
+        this.tasks.push(task);
+    },
+
+
+    generateUniqueId: function () {
+        return '_' + Math.random().toString(36).substr(2, 9);
+    },
+
+
+    changeTaskStatus: function (taskId, newStatus) {
+        const task = this.tasks.find(task => task.id === taskId);
+        if (task) {
+            task.status = newStatus;
+        }
+    },
+
+    changeTaskStatus1: function (taskId, newStatus) {
+        for (let i = 0; i < this.tasks.length; i += 1) {
+            if (this.tasks[i].id === taskId) {
+                this.tasks[i].status = newStatus;
+            }
+        }
+    }
+
+
+    deleteTask: function (taskId) {
+        this.tasks = this.tasks.filter(task => task.id !== taskId);
+
+    },
+
+    deleteTask1: function (taskId) {
+        const newTasks = [];
+        for (let i = 0; i < this.tasks.length; i += 1) {
+            if (this.tasks[i].id !== taskId) {
+                newTasks.push(this.tasks[i]);
+            }
+        }
+        this.tasks = newTasks
+    },
+
+    listTasks: function () {
+        return this.tasks;
+    },
+
+    listID: function () {
+        for (let i = 0; i < this.tasks.length; i += 1) {
+            console.log(this.tasks[i].id);
+        }
+    }
+};
+
+
+
+taskManager.addTask('Задача 1', 'Описание задачи 1');
+taskManager.addTask('Target 1', 'Mission complete');
+taskManager.addTask('Target 2', 'Mission complete2');
+
+console.log('Список задач:');
+console.log(taskManager.listTasks());
+
+
+const taskId = taskManager.tasks[0, 1].id;
+taskManager.changeTaskStatus(taskId, 'Завершено');
+console.log('Изменённый статус первой задачи:');
+console.log(taskManager.listTasks());
+
+taskManager.deleteTask1(taskId);
+// console.log('Удалена первая задача:');
+console.log(taskManager.listTasks());
