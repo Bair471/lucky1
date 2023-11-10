@@ -374,3 +374,20 @@ function checkEquality(a, b) {
 
 
 console.log(checkEquality());
+
+
+
+function circuitPower(voltage, current) {
+    return voltage * current;
+}
+
+console.log(circuitPower())
+
+
+function profitableGamble(prob, prize, pay) {
+    if (prob * prize > pay) {
+        return true
+    } else {
+        return false
+    }
+};
