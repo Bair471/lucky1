@@ -312,7 +312,7 @@ console.log(taskManager.listTasks());
 
 
 const taskId = taskManager.tasks[0, 1].id;
-taskManager.changeTaskStatus([0], 'Запрещено');
+taskManager.changeTaskStatus1([0], 'Запрещено');
 console.log('Изменённый статус первой задачи:');
 console.log(taskManager.listTasks());
 
@@ -324,27 +324,53 @@ console.log(taskManager.listTasks());
 
 
 
-// const TaskManager = {
-//     tasks: [],
-//     addTask: function (title, description) {
-//         const task = {
-//             id: this.idGeneartor(),
-//             title: title,
-//             description: description,
-//             status: 'In Progress',
-//         }
-//         this.tasks.push(task);
-//     },
+const TaskManager = {
+    tasks: [],
+    addTask: function (title, description) {
+        const task = {
+            id: this.idGeneartor(),
+            title: title,
+            description: description,
+            status: 'In Progress',
+        }
+        this.tasks.push(task);
+    },
 
-//     deleteTask: function (taskId) {
-//         const newTasks = [];
-//         for (let i = 0; i < this.tasks.length; i += 1) {
-//             if (this.tasks[i].id !== taskId) {
-//                 newTasks.push(this.tasks[i]);
-//             }
-//         }
-//     },
+    deleteTask: function (taskId) {
+        const newTasks = [];
+        for (let i = 0; i < this.tasks.length; i += 1) {
+            if (this.tasks[i].id !== taskId) {
+                newTasks.push(this.tasks[i]);
+            }
+        }
+    },
 
-//     changeStatus: function (taskId)
+    changeStatus: function (taskId) {
+        for (let i = 0; i < this.tasks.length; i += 1) {
 
-// };
+        }
+    }
+
+};
+
+
+
+
+
+function isSeven(x) {
+    if (x === 7) {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+console.log(isSeven());
+
+
+function checkEquality(a, b) {
+    return a === b;
+}
+
+
+console.log(checkEquality());
