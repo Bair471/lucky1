@@ -391,3 +391,20 @@ function profitableGamble(prob, prize, pay) {
         return false
     }
 };
+
+
+function boolToString(flag) {
+    return flag.toString();
+}
+
+// create your arrow function below
+const arrowFunc = (n) => n;
+
+
+
+function frames(minutes, fps) {
+    return minutes * 60 * fps;
+}
+
+console.log(frames(1, 1));
+
