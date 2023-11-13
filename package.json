@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "run": "node script.js"
+    "run": "node script.js",
+    "taskManager": "node taskManager.js",
+    "testing": "node testing.js"
   },
   "author": "",
   "license": "ISC"
