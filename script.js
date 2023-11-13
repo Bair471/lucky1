@@ -432,3 +432,19 @@ function has_bugs(buggyCode) {
         return "it's a good day"
     }
 }
+
+
+
+const eq = evaluate => eval(evaluate)
+
+
+
+function reverse(arr) {
+    let result = [];
+    for (let i = arr.length - 1; i > -1; i--) {
+        result.push(arr[i]);
+    }
+
+    console.log(...result);
+    return result;
+}
