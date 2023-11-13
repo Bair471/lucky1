@@ -408,3 +408,12 @@ function frames(minutes, fps) {
 
 console.log(frames(1, 1));
 
+
+
+
+const numbers = [1, 2, 3, -4, 5, -6, -7];
+
+const filtered = numbers.filter(n => 0 n => 0);
+
+
+console.log(filtered);
