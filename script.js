@@ -487,3 +487,14 @@ const taskManager = {
 
 taskManager.addTask("Beginner", 10);
 taskManager.listTasks();
+
+
+
+
+function lessThanOrEqualToZero(num) {
+    if (num <= 0) {
+        return true
+    } else {
+        return false
+    }
+}
