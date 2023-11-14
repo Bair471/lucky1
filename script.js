@@ -459,7 +459,7 @@ function footballPoints(wins, draws, losses) {
 
 const taskManager = {
     tasks: [],
-    addTask: function (title, description) {
+    addTask: function (title, id) {
         task = {
             id: id,
             title: title,
@@ -468,5 +468,22 @@ const taskManager = {
         this.tasks.push(task)
     },
 
+    listTasks: function () {
+        for (let i = 0; i < this.tasks.length; i++) {
+            const id = this.tasks[i].id;
+            const title = this.tasks[i].title;
+            console.log(`${id}, ${title}`);
+        }
+    },
 
-}
+    deleteTask: function (taskId) {
+        for (let i = 0; i < this.tasks.length; i++)
+            if (this.tasks[i].id === taskId) {
+                this.tasks.splice(i, 1);
+            }
+    }
+};
+
+
+taskManager.addTask("Beginner", 10);
+taskManager.listTasks();
