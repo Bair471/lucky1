@@ -447,4 +447,26 @@ function reverse(arr) {
 
     console.log(...result);
     return result;
+};
+
+
+
+function footballPoints(wins, draws, losses) {
+    return (wins * 3) + (draws * 1) + (losses * 0);
+};
+
+
+
+const taskManager = {
+    tasks: [],
+    addTask: function (title, description) {
+        task = {
+            id: id,
+            title: title,
+            description: "Start"
+        }
+        this.tasks.push(task)
+    },
+
+
 }
