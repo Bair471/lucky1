@@ -497,4 +497,14 @@ function lessThanOrEqualToZero(num) {
     } else {
         return false
     }
+};
+
+
+
+function profitableGamble(prob, prize, pay) {
+    if (prob * prize - pay > 0) {
+        return true
+    } else {
+        return false
+    }
 }
