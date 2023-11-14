@@ -507,4 +507,15 @@ function profitableGamble(prob, prize, pay) {
     } else {
         return false
     }
-}
+};
+
+
+// Вот я про это говорил что у меня не правильно находило позицию числа 3, но щас работает (Видимо я коряво переписал в первый раз).
+const numbers = [1, 2, 4, 5, 3, 6];
+const res = numbers.findIndex(findThree);
+
+function findThree(value) {
+    return value === 3;
+};
+
+console.log(res);
