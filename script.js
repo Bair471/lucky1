@@ -459,11 +459,12 @@ function footballPoints(wins, draws, losses) {
 
 const taskManager = {
     tasks: [],
-    addTask: function (title, id) {
+    addTask: function (title, id, status) {
         task = {
             id: id,
             title: title,
-            description: "Start"
+            description: "Start",
+            status: status,
         }
         this.tasks.push(task)
     },
@@ -472,7 +473,8 @@ const taskManager = {
         for (let i = 0; i < this.tasks.length; i++) {
             const id = this.tasks[i].id;
             const title = this.tasks[i].title;
-            console.log(`${id}, ${title}`);
+            const status = this.tasks[i].status;
+            console.log(`${id}, ${title}, ${status}`);
         }
     },
 
@@ -481,12 +483,22 @@ const taskManager = {
             if (this.tasks[i].id === taskId) {
                 this.tasks.splice(i, 1);
             }
-    }
+    },
+
+    changeStatus: function (taskId, newStatus) {
+        for (let i = 0; i < this.tasks.length; i++)
+            if (this.tasks[i].id === taskId) {
+                this.tasks[i].status = newStatus;
+            }
+    },
 };
 
-
-taskManager.addTask("Beginner", 10);
+taskManager.addTask("Beginner1", 10, "Starter");
+taskManager.addTask("Beginner2", 11, "Starter2");
+taskManager.changeStatus(10, "Changed Status");
+taskManager.deleteTask(10);
 taskManager.listTasks();
+
 
 
 
