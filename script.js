@@ -456,7 +456,7 @@ function footballPoints(wins, draws, losses) {
 };
 
 
-
+// Теперь он идеален
 const taskManager = {
     tasks: [],
     addTask: function (title, id, status) {
