@@ -559,3 +559,40 @@ function shouldServeDrinks(age, onBreak) {
 function getLastItem(arr) {
     return arr[arr.length - 1]
 }
+
+
+const taskMaager = {
+    tasks: [],
+    addTask: function (title, id, status) {
+        task = {
+            id: id,
+            title: title,
+            status: status,
+
+        }
+    },
+    deleteTask: function (taskId) {
+        for (let i = 0; i < this.tasks.length; i++)
+            if (this.tasks[i].id === taskId) {
+                this.tasks.splice(i, 1);
+            }
+    },
+
+    changeStatus: function (taskId, newStatus) {
+        for (let i = 0; i < this.tasks.length; i++)
+            if (this.tasks[i].id === taskId) {
+                this.tasks[i].status = newStatus;
+            }
+    },
+
+    listTasks: function () {
+        const id = this.tasks[i].id;
+        const title = this.tasks[i].title;
+        const status = this.tasks[i].status;
+        console.log(`${id}, ${title}, ${status}`);
+    }
+
+
+
+
+};
