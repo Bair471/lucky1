@@ -531,3 +531,14 @@ function findThree(value) {
 };
 
 console.log(res);
+
+
+
+function calculateFuel(n) {
+    let fuel = n * 10
+    if (fuel < 100) {
+        return fuel = 100
+    } else {
+        return fuel
+    }
+}
