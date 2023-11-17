@@ -542,3 +542,15 @@ function calculateFuel(n) {
         return fuel
     }
 }
+
+
+function shouldServeDrinks(age, onBreak) {
+    var serveDrink;
+    if (age >= 18 && onBreak === false) {
+        serveDrink = true;
+    } else {
+        serveDrink = false;
+    }
+
+    return serveDrink;
+}
