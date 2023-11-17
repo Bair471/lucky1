@@ -554,3 +554,8 @@ function shouldServeDrinks(age, onBreak) {
 
     return serveDrink;
 }
+
+
+function getLastItem(arr) {
+    return arr[arr.length - 1]
+}
