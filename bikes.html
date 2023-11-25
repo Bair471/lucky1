@@ -1,16 +1,16 @@
-<!DOCTYPE html>
+
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Task Manager</title>
+    <title>Task Manager</title> 
 
-    <!-- Task input and add button -->
-    <input type="text" id="taskInput" placeholder="Enter Bike Name" style="
+    
+    <input type="text" id="searchInput" placeholder="Enter Bike Name" style="
     margin-left: 120px;
 ">
     <button id="addTaskButton" onclick="addTask()">Find Bike</button>
 
-    <!-- Task list -->
     <ul id="taskList"></ul>
 
     <h1 style="
@@ -31,3 +31,104 @@
 
 </body>
 </html>
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table Search</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        input[type="text"] {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <h2 style="
+    margin-bottom: -24px;">Find Bike</h2>
+    <input type="text" id="searchInput" placeholder="Find your bike" style="
+    margin-left: 110px;">
+    <button onclick="searchTable()">Search</button>
+    <table id="data-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Bike Type</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>City bycicle</td>
+                <td>300</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Road bycicle</td>
+                <td>350</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Mountain bycicle</td>
+                <td>400</td>
+            </tr>
+           
+        </tbody>
+    </table>
+</div>
+
+<script>
+    // Получаем ссылки на элементы
+    const searchInput = document.getElementById('searchInput');
+    const dataTable = document.getElementById('data-table');
+
+    // Добавляем обработчик события для ввода в поле поиска
+    searchInput.addEventListener('input', function () {
+        searchTable();
+    });
+
+    // Функция для поиска и отображения результатов
+    function searchTable() {
+        const searchTerm = searchInput.value.toLowerCase();
+        const rows = dataTable.getElementsByTagName('tr');
+
+        for (let i = 1; i < rows.length; i++) {  // Начинаем с 1, чтобы пропустить заголовок таблицы
+            const cells = rows[i].getElementsByTagName('td');
+            let found = false;
+
+            for (let j = 0; j < cells.length; j++) {
+                const cellText = cells[j].innerText.toLowerCase();
+                if (cellText.includes(searchTerm)) {
+                    found = true;
+                    break;
+                }
+            }
+
+            if (found) {
+                rows[i].style.display = '';
+            } else {
+                rows[i].style.display = 'none';
+            }
+        }
+    }
+</script>
+
+</body>
+</html> -->
