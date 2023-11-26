@@ -634,4 +634,12 @@ function minMax(arr) {
     returnArr.push(max);
     
     return returnArr;
-  },
+  };
+
+  function addUp(num) {
+    var total = 0;
+    for (var i = 1; i <= num; i++) {
+      total += i;
+    }
+    return total;
+  }
