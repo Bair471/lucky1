@@ -668,15 +668,18 @@
 
 
 class Bloger {
-    constructor() {
+    constructor(firstName, lastName) {
         this.firstName = firstName;
-        this.lastName = this.lastName;
+        this.lastName = lastName;
     }
     sayName() {
         console.log(`Наш Блоггер: ${this.firstName} ${this.lastName}`)
     }
 }
 
-let Bloger = new Bloger ('Bair' 'Shirnengiin');
+let Bloger1 = new Bloger ('Bair','Shirnengiin');
+Bloger1.sayName();
 
+let Bloger2 = new Bloger ('Warren', 'Buffet');
+Bloger2.sayName();
 
