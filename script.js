@@ -667,19 +667,36 @@
 // };
 
 
-class Bloger {
-    constructor(firstName, lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
-    sayName() {
-        console.log(`Наш Блоггер: ${this.firstName} ${this.lastName}`)
+// class Bloger {
+//     constructor(firstName, lastName) {
+//         this.firstName = firstName;
+//         this.lastName = lastName;
+//     }
+//     sayName() {
+//         console.log(`Наш Блоггер: ${this.firstName} ${this.lastName}`)
+//     }
+// }
+
+// let Bloger1 = new Bloger ('Bair','Shirnengiin');
+// Bloger1.sayName();
+
+// let Bloger2 = new Bloger ('Warren', 'Buffet');
+// Bloger2.sayName();
+
+
+class Note {
+    constructor(container, name="", done = false) {
+        this.item = document.createElement('div')
+
+        this.item.classList.add(
+        'list-group-item',
+        'd-flex',
+        'justify-content-between',
+        'align-items-center'
+        )
+        container.append(this.item)
     }
 }
 
-let Bloger1 = new Bloger ('Bair','Shirnengiin');
-Bloger1.sayName();
-
-let Bloger2 = new Bloger ('Warren', 'Buffet');
-Bloger2.sayName();
+let NewNote = new Note(document.getElementById('app'))
 
