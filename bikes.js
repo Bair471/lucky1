@@ -45,21 +45,21 @@
 //         }
 
 
-const categories = [
-    { Bikes },
-    { Helmets },
-    { Parts },
-    { Accessories },
-    { Clothing },
-    { Brands }
+// const categories = [
+//     { Bikes },
+//     { Helmets },
+//     { Parts },
+//     { Accessories },
+//     { Clothing },
+//     { Brands }
 
-];
+// ];
 
-const bikes = [
-    { id: 1, title: 'mountain bike', price: 100 },
-    { id: 2, title: 'road bike', price: 200 },
-    { id: 3, title: 'city bike', price: 300 }
-];
+// const bikes = [
+//     { id: 1, title: 'mountain bike', price: 100 },
+//     { id: 2, title: 'road bike', price: 200 },
+//     { id: 3, title: 'city bike', price: 300 }
+// ];
 
 /*
     getElementById - получает элемент по id из html
@@ -72,46 +72,46 @@ const bikes = [
 
 // update table with bike-table id
 
-const table = document.getElementById('bike-table');
-function createTableHeader() {
-    const header = document.createElement('tr');
-    const headerId = document.createElement('th');
-    headerId.innerText = 'id';
-    const headerTitle = document.createElement('th');
-    headerTitle.innerText = 'title';
-    const headerPrice = document.createElement('th');
-    headerPrice.innerText = 'price';
-    header.appendChild(headerId);
-    header.appendChild(headerTitle);
-    header.appendChild(headerPrice);
-    table.appendChild(header);
-}
+// const table = document.getElementById('bike-table');
+// function createTableHeader() {
+//     const header = document.createElement('tr');
+//     const headerId = document.createElement('th');
+//     headerId.innerText = 'id';
+//     const headerTitle = document.createElement('th');
+//     headerTitle.innerText = 'title';
+//     const headerPrice = document.createElement('th');
+//     headerPrice.innerText = 'price';
+//     header.appendChild(headerId);
+//     header.appendChild(headerTitle);
+//     header.appendChild(headerPrice);
+//     table.appendChild(header);
+// }
 
-// create table body
-function createTableBody() {
-    const body = document.createElement('tbody');
-    table.appendChild(body);
+// // create table body
+// function createTableBody() {
+//     const body = document.createElement('tbody');
+//     table.appendChild(body);
 
-    // create table rows
-    bikes.forEach((bike) => {
-        const row = document.createElement('tr');
-        const cellId = document.createElement('td');
-        cellId.innerText = bike.id;
-        const cellTitle = document.createElement('td');
-        cellTitle.innerText = bike.title;
-        const cellPrice = document.createElement('td');
-        cellPrice.innerText = bike.price;
-        row.appendChild(cellId);
-        row.appendChild(cellTitle);
-        row.appendChild(cellPrice);
-        body.appendChild(row);
-    });
-}
+//     // create table rows
+//     bikes.forEach((bike) => {
+//         const row = document.createElement('tr');
+//         const cellId = document.createElement('td');
+//         cellId.innerText = bike.id;
+//         const cellTitle = document.createElement('td');
+//         cellTitle.innerText = bike.title;
+//         const cellPrice = document.createElement('td');
+//         cellPrice.innerText = bike.price;
+//         row.appendChild(cellId);
+//         row.appendChild(cellTitle);
+//         row.appendChild(cellPrice);
+//         body.appendChild(row);
+//     });
+// }
 
 
 
-createTableHeader();
-createTableBody();
+// createTableHeader();
+// createTableBody();
 
 
 
@@ -232,9 +232,20 @@ class Note {
 
         container.append(this.item)
     }
+    set name(value) {
+        this._name = value
+        this.nameSpan.textContent = value
+    }
+
+    get name() {
+        return this._name
+    }
 }
 
-let NewNote = new Note(document.getElementById('app'))
+let NewNote = new Note(document.getElementById('app'), 'Привет')
+let NewNote2 = new Note(document.getElementById('app'), 'Kak dela')
+
+
 
 
 
