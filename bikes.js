@@ -116,134 +116,139 @@
 
 
 
+const image = document.getElementById('giant');
+image.style.margin = "auto";
+image.style.width = "80%";
 
 
-// const bikes = [
-//     { id: 1, title: 'mountain bike', price: 100 },
-//     { id: 2, title: 'road bike', price: 200 },
-//     { id: 3, title: 'city bike', price: 300 }
-// ];
+const bikes = [
+    { id: 1, title: 'mountain bike', price: 100 },
+    { id: 2, title: 'road bike', price: 200 },
+    { id: 3, title: 'city bike', price: 300 }
+];
 
-// const table = document.getElementById('bike-table');
-// function createTableHeader() {
-//     const header = document.createElement('tr');
-//     const headerId = document.createElement('th');
-//     headerId.innerText = 'id';
-//     const headerTitle = document.createElement('th');
-//     headerTitle.innerText = 'title';
-//     const headerPrice = document.createElement('th');
-//     headerPrice.innerText = 'price';
-//     header.appendChild(headerId);
-//     header.appendChild(headerTitle);
-//     header.appendChild(headerPrice);
-//     table.appendChild(header);
-// }
+const table = document.getElementById('bike-table');
+table.style.color = "black";
+table.style.fontSize = "25px";
+table.style.margin = "auto";
+function createTableHeader() {
+    const header = document.createElement('tr');
+    const headerId = document.createElement('th');
+    headerId.innerText = 'id';
+    const headerTitle = document.createElement('th');
+    headerTitle.innerText = 'title';
+    const headerPrice = document.createElement('th');
+    headerPrice.innerText = 'price';
+    header.appendChild(headerId);
+    header.appendChild(headerTitle);
+    header.appendChild(headerPrice);
+    table.appendChild(header);
+}
 
-// // create table body
-// function createTableBody() {
-//     const body = document.createElement('tbody');
-//     table.appendChild(body);
+// create table body
+function createTableBody() {
+    const body = document.createElement('tbody');
+    table.appendChild(body);
 
-//     // create table rows
-//     bikes.forEach((bike) => {
-//         const row = document.createElement('tr');
-//         const cellId = document.createElement('td');
-//         cellId.innerText = bike.id;
-//         const cellTitle = document.createElement('td');
-//         cellTitle.innerText = bike.title;
-//         const cellPrice = document.createElement('td');
-//         cellPrice.innerText = bike.price;
-//         row.appendChild(cellId);
-//         row.appendChild(cellTitle);
-//         row.appendChild(cellPrice);
-//         body.appendChild(row);
-//     });
-// }
-
-
-
-// createTableHeader();
-// createTableBody();
+    // create table rows
+    bikes.forEach((bike) => {
+        const row = document.createElement('tr');
+        const cellId = document.createElement('td');
+        cellId.innerText = bike.id;
+        const cellTitle = document.createElement('td');
+        cellTitle.innerText = bike.title;
+        const cellPrice = document.createElement('td');
+        cellPrice.innerText = bike.price;
+        row.appendChild(cellId);
+        row.appendChild(cellTitle);
+        row.appendChild(cellPrice);
+        body.appendChild(row);
+    });
+}
 
 
-// // Получаем ссылки на элементы
-// const searchInput = document.getElementById('searchInput');
-// const dataTable = document.getElementById('bike-table');
-
-// // Добавляем обработчик события для ввода в поле поиска
-// searchInput.addEventListener('input', function () {
-//     searchTable();
-// });
-
-// // Функция для поиска и отображения результатов
-// function searchTable() {
-//     const searchTerm = searchInput.value.toLowerCase();
-//     const rows = dataTable.getElementsByTagName('tr');
-
-//     for (let i = 1; i < rows.length; i++) {  // Начинаем с 1, чтобы пропустить заголовок таблицы
-//         const cells = rows[i].getElementsByTagName('td');
-//         let found = false;
-
-//         for (let j = 0; j < cells.length; j++) {
-//             const cellText = cells[j].innerText.toLowerCase();
-//             if (cellText.includes(searchTerm)) {
-//                 found = true;
-//                 break;
-//             }
-//         }
-
-//         if (found) {
-//             rows[i].style.display = '';
-//         } else {
-//             rows[i].style.display = 'none';
-//         }
-//     }
-// }
-
-class Note {
-    _name =""
-
-    constructor(container, name="", done = false) {
-        this.item = document.createElement("div");
-        this.buttonGroup = document.createElement("div");
-        this.nameSpan = document.createElement("span");
-        this.doneButton = document.createElement("button");
-        this.deleteButton = document.createElement("button");
+createTableHeader();
+createTableBody();
 
 
-        this.item.classList.add(
-        'list-group-item',
-        'd-flex',
-        'justify-content-between',
-        'align-items-center'
-        )
-        this.buttonGroup.classList.add("btn-group", "btn-group-sm");
-        this.doneButton.classList.add("btn", "btn-success");
-        this.doneButton.textContent = 'Готово';
-        this.deleteButton.classList.add("btn", "btn-danger");
-        this.deleteButton.textContent = 'Удалить';
+// Получаем ссылки на элементы
+const searchInput = document.getElementById('searchInput');
+const dataTable = document.getElementById('bike-table');
 
-        this.buttonGroup.append(this.doneButton);
-        this.buttonGroup.append(this.deleteButton);
-        this.item.append(this.nameSpan);
-        this.item.append(this.buttonGroup);
+// Добавляем обработчик события для ввода в поле поиска
+searchInput.addEventListener('input', function () {
+    searchTable();
+});
 
-        this.name = name
+// Функция для поиска и отображения результатов
+function searchTable() {
+    const searchTerm = searchInput.value.toLowerCase();
+    const rows = dataTable.getElementsByTagName('tr');
 
-        container.append(this.item)
-    }
-    set name(value) {
-        this._name = value
-        this.nameSpan.textContent = value
-    }
+    for (let i = 1; i < rows.length; i++) {  // Начинаем с 1, чтобы пропустить заголовок таблицы
+        const cells = rows[i].getElementsByTagName('td');
+        let found = false;
 
-    get name() {
-        return this._name
+        for (let j = 0; j < cells.length; j++) {
+            const cellText = cells[j].innerText.toLowerCase();
+            if (cellText.includes(searchTerm)) {
+                found = true;
+                break;
+            }
+        }
+
+        if (found) {
+            rows[i].style.display = '';
+        } else {
+            rows[i].style.display = 'none';
+        }
     }
 }
 
-let NewNote = new Note(document.getElementById('app'), 'Привет')
-let NewNote2 = new Note(document.getElementById('app'), 'Kak dela')
+// class Note {
+//     _name =""
+
+//     constructor(container, name="", done = false) {
+//         this.item = document.createElement("div");
+//         this.buttonGroup = document.createElement("div");
+//         this.nameSpan = document.createElement("span");
+//         this.doneButton = document.createElement("button");
+//         this.deleteButton = document.createElement("button");
+
+
+//         this.item.classList.add(
+//         'list-group-item',
+//         'd-flex',
+//         'justify-content-between',
+//         'align-items-center'
+//         )
+//         this.buttonGroup.classList.add("btn-group", "btn-group-sm");
+//         this.doneButton.classList.add("btn", "btn-success");
+//         this.doneButton.textContent = 'Готово';
+//         this.deleteButton.classList.add("btn", "btn-danger");
+//         this.deleteButton.textContent = 'Удалить';
+
+//         this.buttonGroup.append(this.doneButton);
+//         this.buttonGroup.append(this.deleteButton);
+//         this.item.append(this.nameSpan);
+//         this.item.append(this.buttonGroup);
+
+//         this.name = name
+
+//         container.append(this.item)
+//     }
+//     set name(value) {
+//         this._name = value
+//         this.nameSpan.textContent = value
+//     }
+
+//     get name() {
+//         return this._name
+//     }
+// }
+
+// let NewNote = new Note(document.getElementById('app'), 'Привет')
+// let NewNote2 = new Note(document.getElementById('app'), 'Kak dela')
 
 
 
