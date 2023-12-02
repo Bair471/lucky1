@@ -667,21 +667,21 @@
 // };
 
 
-// class Bloger {
-//     constructor(firstName, lastName) {
-//         this.firstName = firstName;
-//         this.lastName = lastName;
-//     }
-//     sayName() {
-//         console.log(`Наш Блоггер: ${this.firstName} ${this.lastName}`)
-//     }
-// }
+class Bloger {
+    constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    sayName() {
+        console.log(`Наш Блоггер: ${this.firstName} ${this.lastName}`)
+    }
+}
 
-// let Bloger1 = new Bloger ('Bair','Shirnengiin');
-// Bloger1.sayName();
+let Bloger1 = new Bloger ('Bair','Shirnengiin');
+Bloger1.sayName();
 
-// let Bloger2 = new Bloger ('Warren', 'Buffet');
-// Bloger2.sayName();
+let Bloger2 = new Bloger ('Warren', 'Buffet');
+Bloger2.sayName();
 
 
 class Note {
@@ -700,3 +700,49 @@ class Note {
 
 let NewNote = new Note(document.getElementById('app'))
 
+
+
+class Note {
+    _name =""
+
+    constructor(container, name="", done = false) {
+        this.item = document.createElement("div");
+        this.buttonGroup = document.createElement("div");
+        this.nameSpan = document.createElement("span");
+        this.doneButton = document.createElement("button");
+        this.deleteButton = document.createElement("button");
+
+
+        this.item.classList.add(
+        'list-group-item',
+        'd-flex',
+        'justify-content-between',
+        'align-items-center'
+        )
+        this.buttonGroup.classList.add("btn-group", "btn-group-sm");
+        this.doneButton.classList.add("btn", "btn-success");
+        this.doneButton.textContent = 'Готово';
+        this.deleteButton.classList.add("btn", "btn-danger");
+        this.deleteButton.textContent = 'Удалить';
+
+        this.buttonGroup.append(this.doneButton);
+        this.buttonGroup.append(this.deleteButton);
+        this.item.append(this.nameSpan);
+        this.item.append(this.buttonGroup);
+
+        this.name = name
+
+        container.append(this.item)
+    }
+    set name(value) {
+        this._name = value
+        this.nameSpan.textContent = value
+    }
+
+    get name() {
+        return this._name
+    }
+}
+
+let NewNote = new Note(document.getElementById('app'), 'Привет')
+let NewNote2 = new Note(document.getElementById('app'), 'Kak dela')

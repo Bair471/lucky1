@@ -267,7 +267,7 @@
 
 
 const mainLogo = document.getElementById("giant");
-mainLogo.style.margin = "-10px";
+mainLogo.style.margin = "-8px";
 mainLogo.style.width = "102%";
 
 const div = document.createElement("div");
@@ -276,10 +276,10 @@ const divContent = document.createTextNode(text);
 div.appendChild(divContent);
 document.body.appendChild(div);
 div.style.color = "white";
-div.style.fontSize = "25px";
-div.style.fontFamily = "sans-serif";
-div.style.marginTop = "-100px";
-div.style.marginLeft = "60px";
+div.style.fontSize = "20px";
+div.style.fontFamily = "monospace";
+div.style.marginTop = "-65px";
+div.style.marginLeft = "90px";
 div.style.fontStyle = "italic";
 
 
@@ -290,7 +290,7 @@ const brandSwitch = document.getElementById("brandswitch");
     brandSwitch.style.height = "30px";
     brandSwitch.style.textAlign = "left";
     brandSwitch.style.zIndex ="1050";
-    brandSwitch.style.marginInline = "-10px";
+    brandSwitch.style.marginInline = "-8px";
     
 
 const navigation = document.getElementById("navigation");
@@ -298,44 +298,11 @@ const navigation = document.getElementById("navigation");
     navigation.style.float = "left";
     navigation.style.listStyle = "none";
 
+const navli = document.getElementsByClassName("list-items");
+    navli.style.marginLeft = "20px";
 
-const listItems = document.querySelectorAll('.list-items');
-for(i = 0; i <= listItems.length; i++) {
-    listItems[i].style.fontFamily = "sans-serif";
-    listItems[i].style.marginLeft = "20px";
-    listItems[i].style.marginTop = "-40px";
-    listItems[i].style.color = "white";
-    listItems[i].style.marginRight = "40px";
-    listItems[i].style.fontStyle = "italic";
-}
 
-console.log(listItems);
  
 
 
-document.querySelector('#elastic').oniput = function () {
-    let val = this.value.trim();
-    let elasticItems = document.querySelectorAll('.elastic li');
-    if (val !== '') {
-        elasticItems.forEach(function(elem){
-            if (elem.innerText.search(val) == -1) {
-                elem.classList.add('hide');
-            }
-            else { 
-                elem.classList.remove('hide');
-                let str = elem.innerText;
-                elem.innerHTML = insertMark(str, elem.innerText.search(val), val.length);
-            }
-        });
-    }
-    else {
-        elasticItems.forEach(function (elem) {
-            elem.classList.remove('hide');
-        })
-    }
-}
 
-function insertMark(string, pos) {
-    return string.slice(0, pos) + '<mark>' + string.slice(pos, pos + len) + '<mark>' + string.slice(pos + len);
-
-}

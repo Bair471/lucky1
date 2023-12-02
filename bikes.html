@@ -162,30 +162,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Task Manager</title> 
+    <title>Bikes</title> 
 
-    
+    <form>
+        <label for="fname">Search:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+      </form>
+
     <img id="giant" src="style.css/Giant.png">
-    
-    <input type="text" id="searchInput" placeholder="Enter Bike Name" style="
-    margin-left: 120px;
-">
-    <button id="addTaskButton" onclick="addTask()">Find Bike</button>
-
-    <ul id="taskList"></ul>
-
-    <h1 style="
-    font-size: 23px;
-    margin-top: -40px;
-">Bike Name</h1>
 
 </head>
 <body>
 
-<div>
-    Choose the bike to buy
+<div id="brandswitch">
 
-    <table id="bike-table"></table>
+</div>  
+<div class="menu">
+    <ul id="navigation">
+        <li class="list-items">Road Bikes</li>
+        <li class="list-items">Mountain Bikes</li>
+        <li class="list-items">Electric Bikes</li>
+        <li class="list-items">All Bikes</li>
+        <li class="list-items">Gear</li>
+    </ul>
 </div>
 
 <script src="bikes.js"></script>
